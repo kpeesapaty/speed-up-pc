@@ -1,0 +1,114 @@
+﻿PC PERFORMANCE BENCHMARK REPORT
+Label   : before
+Time    : 03/15/2026 14:23:37
+Machine : JUGGERNAUT
+
+
+============================================================
+  1. SYSTEM SNAPSHOT
+============================================================
+CPU              : AMD Ryzen 7 5700X 8-Core Processor
+CPU Max Clock    : 3401 MHz
+CPU Current Clock: 3401 MHz  â† should be near MaxClockSpeed under load
+CPU Load Now     : 19%
+RAM Total        : 31.9 GB
+RAM Used         : 16.2 GB
+RAM Free         : 15.8 GB
+RAM Speed        : 2400 MHz  â† should be 3200+ if XMP enabled
+Windows          : Microsoft Windows 11 Pro Build 26200
+
+
+============================================================
+  2. POWER PLAN
+============================================================
+Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)
+
+
+============================================================
+  3. CPU BENCHMARK (prime sieve to 500,000)
+============================================================
+Primes found : 41538 (in range 2..500000)
+Time taken   : 4081 ms  â† lower is better
+
+
+============================================================
+  4. MEMORY BENCHMARK (allocate & sum 50M integers)
+============================================================
+Array sum  : 6374991808
+Time taken : 97885 ms  â† lower is better (sensitive to RAM speed)
+
+
+============================================================
+  5. DISK BENCHMARK (sequential write + read 256MB)
+============================================================
+Write: 342.2 MB/s (748 ms for 256MB)  â† NVMe should be 2000+ MB/s
+Read : 1094 MB/s (234 ms for 256MB)
+
+
+============================================================
+  6. TOP 10 PROCESSES BY CPU
+============================================================
+
+Name          CPU-sec RAM-MB
+----          ------- ------
+explorer        819.7    436
+SearchIndexer     727     70
+msedge            573     70
+msedge            513    282
+MsMpEng         503.8    330
+vmmemWSL        394.4   1645
+System            343      8
+Taskmgr         325.4    204
+svchost         288.3    101
+dwm             261.4    236
+
+
+
+
+============================================================
+  7. TOP 10 PROCESSES BY RAM
+============================================================
+
+Name               RAM-MB CPU-sec
+----               ------ -------
+vmmemWSL             1645   394.4
+Memory Compression    950    14.6
+explorer              436   819.7
+OneDrive              351   137.4
+brave                 349   124.5
+MsMpEng               333   503.8
+msedge                295     6.6
+powershell            292   105.4
+msedge                282     513
+dwm                   236   261.4
+
+
+
+
+============================================================
+  8. LAST BOOT & STARTUP DURATION
+============================================================
+Last boot  : 03/15/2026 13:44:39
+Uptime     : 0h 40m
+Boot duration: 0 seconds
+
+
+============================================================
+  9. WINSAT CACHED SCORES (from last assessment)
+============================================================
+Processor score  : 9.3
+Memory score     : 9.3
+Disk score       : 9.5
+Graphics score   : 9.9
+(Run 'winsat formal' as Admin to refresh these)
+
+
+============================================================
+  SUMMARY
+============================================================
+CPU benchmark  : 4081 ms
+Memory bench   : 97885 ms
+Disk write     : 342.2 MB/s
+Disk read      : 1094 MB/s
+RAM speed      : 2400 MHz
+CPU clock now  : 3401 MHz / 3401 MHz max
