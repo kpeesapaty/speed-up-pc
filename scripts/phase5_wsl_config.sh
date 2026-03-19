@@ -27,7 +27,6 @@ cat > "$WSLCONFIG" << 'EOF'
 memory=8GB
 processors=6
 swap=2GB
-pageReporting=false
 localhostForwarding=true
 guiApplications=true
 nestedVirtualization=false

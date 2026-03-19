@@ -1,5 +1,26 @@
 # JUGGERNAUT Speed-Up Plan
 
+## Ad-hoc Fixes Log
+
+### Taskbar flicker on login (silver ↔ black) — fixed 2026-03-17
+
+**Symptom:** Taskbar and Start button flickered between silver/light and black/dark on every login.
+
+**Root cause:** Registry mismatch between two keys that both control accent color on the taskbar:
+- `HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\ColorPrevalence = 0` (accent OFF)
+- `HKCU\Software\Microsoft\Windows\DWM\ColorPrevalence = 1` (accent ON)
+
+Windows resolves the conflict at shell load time, causing the visible flash.
+
+**Fix applied:**
+```powershell
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize' -Name 'ColorPrevalence' -Value 1
+```
+
+Both keys now `= 1`. No third-party tools involved — pure Windows registry drift.
+
+---
+
 ## ⚠ Open Issue: NVMe Write Speed Below Spec
 
 **Sabrent Rocket 4.0 1TB rated:** ~7000 MB/s read / ~6500 MB/s write
@@ -203,7 +224,7 @@ wsl --shutdown
 2. **Manage 3D Settings → Global Settings:**
    - Vertical sync → **Fast** (not "On" — "On" drops to 30fps if any frame exceeds 16.67ms)
    - Low Latency Mode → **Ultra**
-   - Power management mode → **Prefer maximum performance**
+   - Power management mode → **Optimal power** *(reverted 2026-03-17 — max performance is wasteful at idle; GPU still boosts to full clocks under load)*
 3. **Display → Change resolution:**
    - Verify both monitors are at 60Hz (not 59Hz — some cables cause this)
    - If DisplayPort monitor shows limited options, try a different DP cable (DP 1.4 needed for 4K@60Hz with DSC)

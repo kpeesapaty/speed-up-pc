@@ -16,6 +16,7 @@ $disableList = @(
     "EpicGamesLauncher",
     "NZXT CAM",
     "NZXT",
+    "NZXT.CAM",
     "com.squirrel.WhatsApp.WhatsApp",
     "WhatsApp",
     "LogiDownloadAssistant",
